@@ -35,4 +35,4 @@ for i in Dir:
 with open('pickle/wordvec.pkl','w') as f:
     pickle.dump(player,f)
     print('saved')
-
+#This is a dictionary with player id as name an a big string as value
