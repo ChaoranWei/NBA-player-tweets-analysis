@@ -11,7 +11,7 @@ all words from their tweets
 '''
 
 def tweet2words(raw):
-    letter_factorial = re.sub("[^a-zA-Z!]", " ", raw)
+    letter_factorial = re.sub("[^a-zA-Z!0-9:-]", " ", raw)
     words = letter_factorial.lower().split()
     stops = set(stopwords.words("english"))                  
     meaningful_words = [w for w in words if (not w in stops)]    
