@@ -6,8 +6,7 @@ import csv
 
 '''Author: yanofsky github: https://gist.github.com/yanofsky/5436496 with small modification
 '''
-def get_all_tweets(screen_name):
-    #Twitter only allows access to a users most recent 3240 tweets with this method
+def get_all_tweets(username):
 	
     #authorize twitter, initialize tweepy
     auth = OAuthHandler(consumer_key, consumer_secret)
@@ -18,7 +17,7 @@ def get_all_tweets(screen_name):
     alltweets = []	
 	
     #make initial request for most recent tweets (200 is the maximum allowed count)
-    new_tweets = api.user_timeline(screen_name = screen_name,count=200)
+    new_tweets = api.user_timeline(screen_name = username,count=200)
     
     #save most recent tweets
     alltweets.extend(new_tweets)
@@ -60,15 +59,6 @@ access_secret = "7wUuYou28qZo8SoiqtjSeh7kddy17wUlGkjFQnpI36bfT"
 consumer_key = "WCHmxZWkcDjzXWts6dMKj4nL4"
 consumer_secret = "2MevSHs5OsXMtajrJZBrx721kiVeOLP5rpvN8IDQPzQaYMwtcm"
 
-#listener to print info when recieve the tweets
-class StdOutListener(StreamListener):
-
-    def on_data(self, data):
-        print data
-        return True
-
-    def on_error(self, status):
-        print status
         
 if __name__ == '__main__':
     with open('playerlist.csv', 'rb') as csvfile:

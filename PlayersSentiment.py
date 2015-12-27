@@ -16,10 +16,12 @@ for line in f:
 players_sentiment = {}
 players_words = {}
 players_level = {}
-players = pickle.load(open('pickle/wordvec.pkl'))
+players = pickle.load(open('pickle/this_season_twitter.pkl'))
 
 for key, value in players.iteritems():
     print(key)
+    if value == True:
+        continue
     value = value.lower().split()
     score = 0
     temp1 = []
@@ -36,6 +38,12 @@ for key, value in players.iteritems():
     players_words[key] = temp1
     players_level[key] = temp2
     
+    with open('pickle/season_playersentiment.pkl','w') as f:
+        pickle.dump(players_sentiment,f)
+        print('saved')
+    
+'''
+    
 with open('pickle/playersentiment.pkl','w') as f:
     pickle.dump(players_sentiment,f)
     print('saved')
@@ -48,3 +56,4 @@ with open('pickle/playerlevel.pkl','w') as f:
     print('saved')
     
 #THis is a dictionary with key as player id and sentiment as value
+'''

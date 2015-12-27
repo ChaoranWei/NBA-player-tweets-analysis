@@ -1,5 +1,5 @@
-import matplotlib.pyplot as plt
-a = ['x','t','e','e']
-plt.hist(a)
+import pickle
 
-plt.show()
+data = pickle.load(open('pickle/playersentiment.pkl'))
+
+season_data = pickle.load(open('pickle/season_playersentiment.pkl'))

@@ -1,12 +1,12 @@
-import pickle
 import matplotlib.pyplot as plt
-print('load data...')
-data = pickle.load(open('pickle/playerlevel.pkl'))
+import pickle
 
-print('drawing histogram...')
+data = pickle.load(open('pickle/playersentiment.pkl'))
+season_data = pickle.load(open('pickle/season_playersentiment.pkl'))
 
-plt.hist(data['KingJames'])
-plt.title("Lebron James Emotion Histogram")
-plt.xlabel("key words")
-plt.ylabel('frequency')
+plt.title('Derrick Rose\'s emotion overall and this season')
+
+plt.bar([0,1],[float(data['drose']), float(season_data['drose'])], color="r",
+align="center", width = 0.3)
+plt.xticks([0,1],['before','this season'])
 plt.show()
