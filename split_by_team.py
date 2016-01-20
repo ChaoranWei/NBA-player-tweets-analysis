@@ -110,6 +110,7 @@ DAL.append('swish41')
 DAL.append('zaza27')
 DAL.append("RFeltonGBMS")
 DAL.append('DeronWilliams')
+DAL.append('JaValeMcGee34')
 
 
 MIN = [39.3]
@@ -163,11 +164,16 @@ TOR.append('DeMar_DeRozan')
 
 DEN = [39.3]
 DEN.append('KennethFaried35')
+DEN.append('randyfoye')
+
+OMG = [55.8]
+OMG.append('tobias31')
+OMG.append('VicOladipo')
 
 
 teams = [ATL, MIA, SAN, PHI, LAC, GS, BKN, CLE, CHI, SAC, LAL, WAS,
          HOU, BOS, CHA, MIL, NOP, DAL, MIN, UTA, NYK, POR, MEM, IND, PHX, 
-         DET, OKC, TOR, DEN]
+         DET, OKC, TOR, DEN, OMG]
 
 win = []
 tweet = []
